@@ -1,0 +1,99 @@
+:root {
+  --bg: #1f1f1f;
+  --panel: #202020;
+  --key: #3b3b3b;
+  --key-text: #f3f3f3;
+  --display: #0c0c0c;
+  --accent: #7eb8e8;
+  --eq: #91c9f7;
+  --muted: #bdbdbd;
+  font-family: "Segoe UI", "Microsoft JhengHei", "PingFang HK", sans-serif;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: #111;
+  color: var(--key-text);
+  display: grid;
+  place-items: center;
+}
+.app {
+  width: min(360px, 100vw);
+  background: var(--panel);
+  padding: 8px 10px 14px;
+}
+.titlebar { font-size: 13px; padding: 4px 6px 8px; }
+.toolbar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 4px 4px 10px;
+}
+.icon-btn, .mode-menu button, .pad button, .mem-row button, .sci button {
+  font: inherit;
+  color: inherit;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+.icon-btn { font-size: 18px; width: 32px; height: 32px; }
+.mode-label { font-size: 20px; }
+.angle-label { margin-left: auto; color: var(--muted); font-size: 13px; }
+.mode-menu {
+  position: absolute;
+  top: 40px;
+  left: 4px;
+  z-index: 5;
+  background: #2b2b2b;
+  border: 1px solid #4a4a4a;
+  min-width: 120px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.4);
+}
+.mode-menu button {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 10px 14px;
+}
+.mode-menu button:hover, .mode-menu button[aria-current="true"] { background: #3d3d3d; }
+.display {
+  margin: 4px 6px 12px;
+  min-height: 64px;
+  background: var(--display);
+  border: 1px solid #4a4a4a;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 8px 12px;
+  font-size: 42px;
+  letter-spacing: 0.5px;
+  overflow: hidden;
+}
+.mem-row, .pad, .sci {
+  display: grid;
+  gap: 4px;
+  padding: 0 4px;
+}
+.mem-row {
+  grid-template-columns: repeat(5, 1fr);
+  margin-bottom: 8px;
+}
+.mem-row button { color: #d0d0d0; font-size: 14px; height: 28px; }
+.mem-row button:disabled { color: #666; cursor: default; }
+.sci {
+  grid-template-columns: repeat(4, 1fr);
+  margin-bottom: 8px;
+}
+.sci button, .pad button {
+  background: var(--key);
+  height: 48px;
+  font-size: 18px;
+}
+.sci button { height: 40px; font-size: 15px; }
+.pad { grid-template-columns: repeat(4, 1fr); }
+.pad .eq { background: var(--eq); color: #10202c; font-weight: 600; }
+.sci button.is-on { outline: 1px solid var(--accent); }
+button:hover:not(:disabled) { filter: brightness(1.08); }
+button:active:not(:disabled) { filter: brightness(0.92); }

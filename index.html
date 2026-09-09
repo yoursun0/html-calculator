@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>小算盤</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app" data-mode="standard">
+    <header class="titlebar">
+      <span class="title">小算盤</span>
+    </header>
+    <div class="toolbar">
+      <button type="button" class="icon-btn" id="menuBtn" aria-expanded="false" aria-controls="modeMenu" aria-label="模式選單">☰</button>
+      <span class="mode-label" id="modeLabel">標準</span>
+      <span class="angle-label" id="angleLabel" hidden>DEG</span>
+      <div class="mode-menu" id="modeMenu" hidden>
+        <button type="button" data-mode="standard">標準</button>
+        <button type="button" data-mode="scientific">進階</button>
+      </div>
+    </div>
+    <div class="display" id="display" aria-live="polite">0</div>
+    <div class="mem-row">
+      <button type="button" data-act="mc" disabled>MC</button>
+      <button type="button" data-act="mr" disabled>MR</button>
+      <button type="button" data-act="mplus">M+</button>
+      <button type="button" data-act="mminus">M−</button>
+      <button type="button" data-act="ms">MS</button>
+    </div>
+    <div class="sci" id="sciPad" hidden>
+      <button type="button" data-act="lparen">(</button>
+      <button type="button" data-act="rparen">)</button>
+      <button type="button" data-act="pi">π</button>
+      <button type="button" data-act="e">e</button>
+      <button type="button" data-act="sin" id="btnSin">sin</button>
+      <button type="button" data-act="cos" id="btnCos">cos</button>
+      <button type="button" data-act="tan" id="btnTan">tan</button>
+      <button type="button" data-act="inv" id="btnInv">inv</button>
+      <button type="button" data-act="log">log</button>
+      <button type="button" data-act="ln">ln</button>
+      <button type="button" data-act="pow">x^y</button>
+      <button type="button" data-act="tenx">10^x</button>
+      <button type="button" data-act="fact">n!</button>
+      <button type="button" data-act="abs">abs</button>
+      <button type="button" data-act="angle" id="btnAngle">DEG</button>
+    </div>
+    <div class="pad">
+      <button type="button" data-act="pct">%</button>
+      <button type="button" data-act="ce">CE</button>
+      <button type="button" data-act="c">C</button>
+      <button type="button" data-act="bs" aria-label="退格">⌫</button>
+      <button type="button" data-act="invx">1/x</button>
+      <button type="button" data-act="sq">x²</button>
+      <button type="button" data-act="sqrt">²√x</button>
+      <button type="button" data-op="/">÷</button>
+      <button type="button" data-digit="7">7</button>
+      <button type="button" data-digit="8">8</button>
+      <button type="button" data-digit="9">9</button>
+      <button type="button" data-op="*">×</button>
+      <button type="button" data-digit="4">4</button>
+      <button type="button" data-digit="5">5</button>
+      <button type="button" data-digit="6">6</button>
+      <button type="button" data-op="-">−</button>
+      <button type="button" data-digit="1">1</button>
+      <button type="button" data-digit="2">2</button>
+      <button type="button" data-digit="3">3</button>
+      <button type="button" data-op="+">+</button>
+      <button type="button" data-act="sign">+/−</button>
+      <button type="button" data-digit="0">0</button>
+      <button type="button" data-act="dot">.</button>
+      <button type="button" class="eq" data-act="eq">=</button>
+    </div>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
