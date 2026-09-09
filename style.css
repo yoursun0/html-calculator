@@ -86,6 +86,7 @@ body {
   grid-template-columns: repeat(4, 1fr);
   margin-bottom: 8px;
 }
+.sci[hidden] { display: none; }
 .sci button, .pad button {
   background: var(--key);
   height: 48px;
